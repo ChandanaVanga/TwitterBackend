@@ -18,7 +18,7 @@ public record UsersLoginDTO
     public string Email { get; set; }
 
     [Required]
-    [JsonPropertyName("password")]
+    [JsonPropertyName("passwor_d")]
     [MaxLength(255)]
     public string Password { get; set; }
 }
@@ -44,7 +44,10 @@ public record UsersLoginResDTO
 
 public record UsersCreateDTO
 {
-
+    // [Required]
+    // [JsonPropertyName("user_id")]
+    // [MaxLength(255)]
+    // public string UserId { get; set; }
 
     [Required]
     [JsonPropertyName("email")]
@@ -58,7 +61,7 @@ public record UsersCreateDTO
     public string UserName { get; set; }
 
     [Required]
-    [JsonPropertyName("password")]
+    [JsonPropertyName("passwor_d")]
     [MaxLength(255)]
     public string Password { get; set; }
 }
@@ -79,10 +82,10 @@ public record UsersCreateResDTO
     [MaxLength(255)]
     public string UserName { get; set; }
 
-    [Required]
-    [JsonPropertyName("user_id")]
-    [MaxLength(255)]
-    public string UserId { get; set; }
+    // [Required]
+    // [JsonPropertyName("user_id")]
+    // [MaxLength(255)]
+    // public int UserId { get; set; }
 }
 
 public record UsersLoginUpdateDTO

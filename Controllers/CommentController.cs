@@ -37,7 +37,8 @@ public class CommentController : ControllerBase
         {
             Text = Data.Text.Trim(),
             UserId = userId,
-            TweetId = Data.TweetId
+            TweetId = Data.TweetId,
+            CommentId = Data.CommentId
         };
 
         // Insert into DB

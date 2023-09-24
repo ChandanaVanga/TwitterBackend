@@ -27,8 +27,8 @@ public class TweetRepository : BaseRepository, ITweetRepository
    
     public async Task<TweetItem> Create(TweetItem Item)
     {
-        var query = $@"INSERT INTO {TableNames.tweet} (title, user_id, created_at, updated_at) 
-        VALUES (@Title, @UserId, @CreatedAt, @UpdatedAt ) RETURNING *";
+        var query = $@"INSERT INTO {TableNames.tweet} (title, user_id, tweet_id, created_at, updated_at) 
+        VALUES (@Title, @UserId, @TweetId, @CreatedAt, @UpdatedAt ) RETURNING *";
 
         using (var con = NewConnection)
             return await con.QuerySingleOrDefaultAsync<TweetItem>(query, Item);

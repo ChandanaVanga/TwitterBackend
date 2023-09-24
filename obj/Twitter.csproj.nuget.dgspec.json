@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nspira\\Downloads\\Twitter\\Twitter.csproj": {}
+    "C:\\Users\\DELL\\Documents\\TwitterBackend\\Twitter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nspira\\Downloads\\Twitter\\Twitter.csproj": {
+    "C:\\Users\\DELL\\Documents\\TwitterBackend\\Twitter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nspira\\Downloads\\Twitter\\Twitter.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\Documents\\TwitterBackend\\Twitter.csproj",
         "projectName": "Twitter",
-        "projectPath": "C:\\Users\\Nspira\\Downloads\\Twitter\\Twitter.csproj",
-        "packagesPath": "C:\\Users\\Nspira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nspira\\Downloads\\Twitter\\obj\\",
+        "projectPath": "C:\\Users\\DELL\\Documents\\TwitterBackend\\Twitter.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\Documents\\TwitterBackend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nspira\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -73,10 +74,29 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.18, 6.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -85,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

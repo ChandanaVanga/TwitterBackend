@@ -24,8 +24,8 @@ public class UsersRepository : BaseRepository, IUsersRepository
 
     public async Task<Users> CreateNewUser(Users Item)
     {
-        var query = $@"INSERT INTO {TableNames.users} ( user_name, email, passwor_d)
-	VALUES ( @UserName, @Email, @Password) RETURNING *";
+        var query = $@"INSERT INTO {TableNames.users} (user_name, email, passwor_d)
+	VALUES (@UserName, @Email, @Password) RETURNING *";
 
         using (var con = NewConnection)
             return await con.QuerySingleOrDefaultAsync<Users>(query, Item);

@@ -104,7 +104,7 @@ public class UsersController : ControllerBase
 
         var res = new UsersCreateResDTO
         {
-            UserId = createdUser.UserId.ToString(),
+            // UserId = createdUser.UserId,
             Email = createdUser.Email,
             UserName = createdUser.UserName,
 
