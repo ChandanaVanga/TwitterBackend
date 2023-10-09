@@ -10,8 +10,8 @@ public record TweetCreateDTO
     [MaxLength(90)]
     public string Title { get; set; }
 
-    [Required]
-    public int TweetId { get; set; }
+    // [Required]
+    // public int TweetId { get; set; }
 
     // [JsonPropertyName("user_id")]
     // [MaxLength(255)]

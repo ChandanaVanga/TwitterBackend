@@ -10,6 +10,9 @@ public record TweetItem
     [JsonPropertyName("user_id")]
     public int UserId { get; set; }
 
+      [JsonPropertyName("user_name")]
+    public string UserName { get; set; }
+
     [JsonPropertyName("title")]
     public string Title { get; set; }
 

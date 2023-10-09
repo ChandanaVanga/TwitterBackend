@@ -46,7 +46,7 @@ public class TweetController : ControllerBase
         {
             Title = Data.Title.Trim(),
             UserId = userId,
-            TweetId = Data.TweetId
+            // TweetId = Data.TweetId
         };
 
         // var toCreatedItem = new TweetItem
