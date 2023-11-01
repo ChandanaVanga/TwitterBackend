@@ -31,13 +31,13 @@ public class TweetController : ControllerBase
         return Convert.ToInt32(claims.Where(x => x.Type == TwitterConstants.UserId).First().Value);
     }
 
-    [HttpPost]
+    [HttpPost("create")]
     public async Task<ActionResult<TweetItem>> CreateTweet([FromBody] TweetCreateDTO Data)
     {
         var userId = GetUserIdFromClaims(User.Claims);
 
          List<TweetItem> usertweets = await _tweet.GetTweetsByUserId(userId);
-        if (usertweets != null && usertweets.Count >= 5)
+        if (usertweets != null && usertweets.Count >= 50)
         {
             return BadRequest("Limit exceeded");
         }
@@ -62,7 +62,7 @@ public class TweetController : ControllerBase
         return StatusCode(201, createdItem);
     }
 
-    [HttpPut("{tweet_id}")]
+    [HttpPut("update/{tweet_id}")]
     public async Task<ActionResult> UpdateTweet([FromRoute] int tweet_id,
     [FromBody] TweetUpdateDTO Data)
     {
@@ -87,7 +87,7 @@ public class TweetController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{tweet_id}")]
+    [HttpDelete("delete/{tweet_id}")]
     public async Task<ActionResult> DeleteTweet([FromRoute] int tweet_id)
     {
         var userId = GetUserIdFromClaims(User.Claims);
