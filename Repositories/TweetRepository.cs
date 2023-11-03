@@ -68,7 +68,11 @@ public class TweetRepository : BaseRepository, ITweetRepository
 
     public async Task<TweetItem> GetById(int TweetId)
     {
-        var query = $@"SELECT * FROM {TableNames.tweet} WHERE tweet_id = @TweetId";
+        var query = $@"SELECT t.*, u.user_name
+FROM tweet AS t
+JOIN users AS u ON t.user_id = u.user_id
+WHERE t.tweet_id = @TweetId;
+";
 
         using (var con = NewConnection)
             return await con.QuerySingleOrDefaultAsync<TweetItem>(query, new { TweetId });
