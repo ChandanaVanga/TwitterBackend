@@ -37,7 +37,12 @@ public class CommentRepository : BaseRepository, ICommentRepository
 
     public async Task<List<CommentItem>> GetAll()
     {
-        var query = $@"SELECT * FROM {TableNames.comment} ORDER BY created_at DESC";
+        // var query = $@"SELECT * FROM {TableNames.comment} ORDER BY created_at DESC";
+
+        var query = $@"SELECT c.*, u.user_name
+              FROM {TableNames.comment} AS c
+              JOIN {TableNames.users} AS u ON c.user_id = u.user_id
+              ORDER BY c.created_at DESC";
 
         using (var con = NewConnection)
             return (await con.QueryAsync<CommentItem>(query)).AsList();
@@ -45,8 +50,8 @@ public class CommentRepository : BaseRepository, ICommentRepository
 
     public async Task<CommentItem> Create(CommentItem Item)
     {
-        var query = $@"INSERT INTO {TableNames.comment} (text, user_id, tweet_id, comment_id) 
-        VALUES (@Text, @UserId, @TweetId, @CommentId) RETURNING *";
+        var query = $@"INSERT INTO {TableNames.comment} (text, user_id, tweet_id) 
+        VALUES (@Text, @UserId, @TweetId) RETURNING *";
 
         using (var con = NewConnection)
             return await con.QuerySingleOrDefaultAsync<CommentItem>(query, Item);
@@ -62,7 +67,13 @@ public class CommentRepository : BaseRepository, ICommentRepository
 
     public async Task<List<CommentItem>> GetCommentsByTweetId(int TweetId)
     {
-         var query = $@"SELECT * FROM {TableNames.comment} WHERE tweet_id = @TweetId";
+        //  var query = $@"SELECT * FROM {TableNames.comment} WHERE tweet_id = @TweetId";
+
+        var query = $@"SELECT c.*, u.user_name
+              FROM {TableNames.comment} AS c
+              JOIN {TableNames.users} AS u ON c.user_id = u.user_id
+              WHERE c.tweet_id = @TweetId";
+
 
         using (var con = NewConnection)
         return (await con.QueryAsync<CommentItem>(query, new { TweetId })).AsList();

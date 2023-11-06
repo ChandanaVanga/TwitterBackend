@@ -22,5 +22,7 @@ public record CommentItem
     [JsonPropertyName("updated_at")]
     public DateTimeOffset UpdatedAt { get; set; }
 
+    [JsonPropertyName("user_name")]
+    public string UserName { get; set; }
     
 }
