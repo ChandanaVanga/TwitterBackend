@@ -12,8 +12,8 @@ public record CommentCreateDTO
     [Required]
     public int TweetId { get; set; }
 
-    [Required]
-    public int CommentId { get; set; }
+    // [Required]
+    // public int CommentId { get; set; }
 }
 
 public record CommentUpdateDTO

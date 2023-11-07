@@ -50,8 +50,8 @@ public class CommentRepository : BaseRepository, ICommentRepository
 
     public async Task<CommentItem> Create(CommentItem Item)
     {
-        var query = $@"INSERT INTO {TableNames.comment} (text, user_id, tweet_id) 
-        VALUES (@Text, @UserId, @TweetId) RETURNING *";
+        var query = $@"INSERT INTO {TableNames.comment} (text, tweet_id) 
+        VALUES (@Text, @TweetId) RETURNING *";
 
         using (var con = NewConnection)
             return await con.QuerySingleOrDefaultAsync<CommentItem>(query, Item);

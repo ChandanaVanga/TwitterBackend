@@ -36,7 +36,7 @@ public class CommentController : ControllerBase
         var toCreateItem = new CommentItem
         {
             Text = Data.Text.Trim(),
-            UserId = userId,
+            // UserId = userId,
             TweetId = Data.TweetId,
             // CommentId = Data.CommentId
         };
